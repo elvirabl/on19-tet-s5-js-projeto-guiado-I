@@ -1,3 +1,4 @@
+
 // Listar todos os produtos, mas só com os campos:
 // id
 // nome
@@ -7,8 +8,19 @@ const readline = require("readline-sync");
 const { database } = require("../database");
 
 const listarTudo = () => {
-  console.table(database);
+
+  const resultado = database
+  .map((objetoProduto) => ({
+    id: objetoProduto.id, 
+    nome: objetoProduto.nome,
+    preco: objetoProduto.preco,
+    quantidade: objetoProduto.quantidade
+  }))
+
+console.table(resultado);
+
   console.log("Dê enter para voltar");
+
   readline.question();
   console.clear();
 }

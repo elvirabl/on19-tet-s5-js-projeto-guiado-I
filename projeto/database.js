@@ -1,4 +1,4 @@
-const database = [
+let database = [
   {
     id: 1,
     nome: "Shampoo Coloral",
